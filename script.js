@@ -60,3 +60,63 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.getElementsByClassName('section-3')[0].addEventListener('mousemove',(e)=>{
+    gsap.to('.product-cursor',{
+        left:e.x,
+        top:e.y
+    })
+})
+document.getElementById('product-1').addEventListener('mousemove',()=>{
+    gsap.to('.product-cursor',{
+        background:'rgb(245, 223, 207)',
+        scale:1
+    })
+})
+document.getElementById('product-1').addEventListener('mouseleave',()=>{
+    gsap.to('.product-cursor',{
+        scale:0.5
+    })
+})
+document.getElementById('product-2').addEventListener('mousemove',()=>{
+    gsap.to('.product-cursor',{
+       scale:1,
+       background:'rgb(255, 225, 207)'
+    })
+})
+document.getElementById('product-2').addEventListener('mouseleave',()=>{
+    gsap.to('.product-cursor',{
+        scale:0.5
+    })
+})
+document.getElementById('product-3').addEventListener('mousemove',()=>{
+    gsap.to('.product-cursor',{
+       scale:1,
+       background:'rgb(245, 223, 300)'
+    })
+})
+document.getElementById('product-3').addEventListener('mouseleave',()=>{
+    gsap.to('.product-cursor',{
+        scale:0.5
+    })
+})
+document.getElementById('product-4').addEventListener('mousemove',()=>{
+    gsap.to('.product-cursor',{
+       scale:1,
+       background:'rgb(245, 223, 207)'
+    })
+})
+document.getElementById('product-4').addEventListener('mouseleave',()=>{
+    gsap.to('.product-cursor',{
+        scale:0.5
+    })
+})
+document.getElementsByClassName('section-3')[0].addEventListener('mousemove',()=>{
+    gsap.to('.product-cursor',{
+        scale:1
+    })
+})
+document.getElementsByClassName('section-3')[0].addEventListener('mouseleave',()=>{
+    gsap.to('.product-cursor',{
+        scale:0
+    })
+})
