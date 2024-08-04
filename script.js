@@ -48,6 +48,7 @@ gsap.to('.nav-menu',{
 
 
 
+
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
@@ -245,3 +246,298 @@ duration:1
 
 }
 menulinksAnimation()
+
+const tabDrag=()=>{
+    let clickDrag= false;
+    var tabhead=document.getElementsByClassName('tab-header')[0];
+    tabhead.addEventListener('mousedown',()=>{
+        clickDrag=true;
+    })
+
+    tabhead.addEventListener('mousemove',(e)=>{
+        if(!clickDrag) return;
+        tabhead.scrollLeft -=e.movementX;
+    })
+    document.addEventListener('mouseup',()=>{
+        clickDrag=false
+    })
+}
+tabDrag()
+
+const tabInteraction=()=>{
+    const buttons = document.querySelectorAll('.radio');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
+    
+})
+let radio1=document.getElementById('radio-1');
+let radio2=document.getElementById('radio-2');
+let radio3=document.getElementById('radio-3');
+let radio4=document.getElementById('radio-4');
+let radio5=document.getElementById('radio-5');
+let radio6=document.getElementById('radio-6');
+let radio7=document.getElementById('radio-7');
+let radio8=document.getElementById('radio-8');
+let radio9=document.getElementById('radio-9');
+let radio10=document.getElementById('radio-10');
+let radio11=document.getElementById('radio-11');
+let radio12=document.getElementById('radio-12');
+let radio13=document.getElementById('radio-13');
+let tabText=document.getElementById('tab-text');
+
+radio1.addEventListener('click',()=>{
+
+    tabText.innerHTML=`Thank you so much for
+the beautiful catering; it
+means a lot working
+with a company such as
+Two Good Co.`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',
+     opacity:1  
+})
+})
+radio2.addEventListener('click',()=>{
+
+    tabText.innerHTML=`The hampers we ordered
+were lovely and the
+team are wonderful to
+liaise with.`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio3.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+My package just arrived
+and the presentation is
+so beautiful; elegant,
+magical and
+meaningful, with the
+items wrapped in
+delicious-smelling tissue
+paper. Gorgeous; will be
+back for more.`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio4.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+I think I speak for
+everyone when I say we
+are very grateful to
+have been able to come
+in and help out for the
+day; the work you do is
+amazing.
+Name
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio5.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+Everyone at Two Good
+are lovely to work with.
+Catering was excellent
+and well priced, all for
+a good cause... what's
+not to love?
+Name
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio6.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+Everyone at Two Good
+My CEO asked me who I
+had used for the
+catering; when I
+explained about Two
+Good, she said "Oh,
+that’s why - the food is
+made with love."
+Name
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio7.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+This is the best catering
+food I have had in years.
+All the meals were
+absolutely delicious,
+well presented and
+generous.
+Name
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio8.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+Great cause, great
+people and absolutely
+great for the
+environment.
+Name
+
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio9.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+Thank you so very much
+for the beautiful gift
+packs; my heart melted. I
+nearly cried when I
+opened one; I can only
+imagine how the women
+in the shelters feel when
+they receive such a gift.
+Name
+
+
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio10.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+I wanted to say a
+MASSIVE thank you for
+the absolutely brilliant
+catering at our team
+offsite yesterday. The
+food was absolutely
+magnificent – high
+quality, fresh and
+delicious. I had so many
+positive comments from
+my team...I will definitely
+be a repeat customer.
+Name
+
+
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio11.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+Love the quality of the
+food and level of
+customer service equals
+the 'meaningfulness' of
+every purchase.
+Name
+
+
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio12.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+I can’t thank you
+enough for the amazing
+food your team
+provided us today. Our
+staff couldn’t speak
+highly enough of the
+fish and the salads;
+looking forward to
+working together more.
+Name
+
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+radio13.addEventListener('click',()=>{
+
+    tabText.innerHTML=`
+Blown away by the
+quality of the food and
+presentation.
+Name
+
+
+
+`
+gsap.to('#tab-text',{
+    transform:'translateY(0)',opacity:1
+})
+
+})
+
+}
+tabInteraction()
+
+const emailbtn=()=>{
+    let warning=document.getElementById('warning')
+    let inputfield=document.getElementById('emailInput').value;
+    let btn=document.getElementById('emailSubmit')
+    btn.addEventListener('click',()=>{
+        if(inputfield===''){
+            warning.style.display='block';
+        }
+        else{
+            warning.style.display='none';
+        }
+        if(btn.innerHTML='<i class="ri-arrow-right-line"></i>'){
+btn.innerHTML='<i class="ri-corner-down-left-fill"></i>'
+}
+else{
+            btn.innerHTML='<i class="ri-corner-down-left-fill"></i>'
+
+        }
+            
+    })
+}
+emailbtn()
